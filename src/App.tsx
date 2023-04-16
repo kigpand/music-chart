@@ -1,24 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import styles from "./App.module.scss";
+import { IEntry } from "./interface/IEntry";
+import Header from "./components/header/Header";
+import Sort from "./components/sort/Sort";
+import List from "./components/list/List";
 
 function App() {
+  const [chart, setChart] = useState<IEntry[]>([]);
+
+  useEffect(() => {
+    fetch("https://itunes.apple.com/us/rss/topalbums/limit=100/json")
+      .then((res) => res.json())
+      .then((response: any) => {
+        setChart(response.feed.entry);
+      })
+      .catch((e: any) => {
+        alert("error");
+      });
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.App}>
+      <Header />
+      <Sort />
+      {chart.length > 0 ? <List entry={chart} /> : <div>로딩중</div>}
     </div>
   );
 }
