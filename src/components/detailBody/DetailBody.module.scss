@@ -1,4 +1,5 @@
 @import "../../styles/color.scss";
+@import "../../styles/common.scss";
 
 .detailBody {
   width: 40%;
@@ -6,6 +7,15 @@
   display: flex;
   flex-direction: column;
   position: relative;
+
+  .back {
+    position: absolute;
+    height: 30px;
+    object-fit: contain;
+    top: 30px;
+    left: 0px;
+    cursor: pointer;
+  }
 
   .link {
     position: absolute;
@@ -16,6 +26,7 @@
     padding: 5px;
     border-radius: 4px;
     text-decoration: none;
+    font-size: 12px;
     cursor: pointer;
   }
 
@@ -33,5 +44,19 @@
     color: $mainColor;
     padding-bottom: 15px;
     border-bottom: 1px solid $mainColor;
+  }
+
+  @include tablet {
+    .link {
+      font-size: 10px;
+    }
+
+    .img {
+      height: 250px;
+    }
+  }
+
+  @include mobile {
+    width: 90%;
   }
 }

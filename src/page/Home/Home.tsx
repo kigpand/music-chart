@@ -7,9 +7,10 @@ import styles from "./Home.module.scss";
 
 interface IHome {
   entry: IEntry[];
+  onSort: (isUpper: boolean) => void;
 }
 
-const Home = ({ entry }: IHome) => {
+const Home = ({ entry, onSort }: IHome) => {
   const [search, setSearch] = useState<IEntry[]>([]);
 
   const onSearch = (data: string) => {
@@ -21,14 +22,14 @@ const Home = ({ entry }: IHome) => {
     }
   };
 
-  const onSort = (isUpper: boolean) => {
-    if (isUpper) {
-    }
-  };
   return (
     <div className={styles.home}>
-      <Header onSearch={onSearch} />
-      <Sort />
+      <Header
+        search={search}
+        onSearch={onSearch}
+        onClearSearch={() => setSearch([])}
+      />
+      <Sort onSort={onSort} />
       <List entry={search.length > 0 ? search : entry} />
     </div>
   );

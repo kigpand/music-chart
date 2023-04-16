@@ -1,3 +1,22 @@
+@import "../../styles/common.scss";
+
 .sort {
-  width: 60%;
+  margin-top: 10px;
+  @include mainWidth;
+
+  .img {
+    height: 20px;
+    object-fit: contain;
+    padding: 3px;
+    border: 1px solid lightgray;
+    cursor: pointer;
+
+    &:hover {
+      background-color: gray;
+    }
+
+    &:last-child {
+      margin-left: 5px;
+    }
+  }
 }

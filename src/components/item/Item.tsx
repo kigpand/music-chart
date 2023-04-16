@@ -12,6 +12,7 @@ const Item = ({ item }: IItem) => {
   const onNav = () => {
     nav(`/detail/${item.id.attributes["im:id"]}`);
   };
+
   return (
     <div className={styles.item} onClick={onNav}>
       <div className={styles.imgContainer}>

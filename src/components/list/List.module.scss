@@ -7,12 +7,17 @@
   flex-direction: column;
 
   .header {
-    width: 60%;
     display: flex;
     @include list;
     font-size: 14px;
     padding: 10px 0;
     text-align: center;
     border-bottom: 2px solid $mainColor;
+  }
+
+  @include tablet {
+    .header {
+      font-size: 12px;
+    }
   }
 }

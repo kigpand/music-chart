@@ -1,7 +1,6 @@
 @import "../../styles/common.scss";
 
 .item {
-  width: 60%;
   padding: 15px 0;
   display: flex;
   @include list;
@@ -48,5 +47,30 @@
 
   .date {
     color: gray;
+  }
+
+  @include tablet {
+    font-size: 14px;
+    .type,
+    .data {
+      font-size: 12px;
+    }
+  }
+
+  @include mobile {
+    font-size: 12px;
+
+    .imgContainer {
+      padding-left: 5px;
+      .img {
+        height: 30px;
+        object-fit: contain;
+      }
+    }
+
+    .type,
+    .data {
+      font-size: 10px;
+    }
   }
 }

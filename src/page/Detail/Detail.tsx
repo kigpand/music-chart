@@ -18,7 +18,7 @@ const Detail = ({ entry }: IDetail) => {
     );
     if (!result) return;
     setDetail(result);
-  }, []);
+  }, [entry, id]);
 
   return (
     <div className={styles.detail}>

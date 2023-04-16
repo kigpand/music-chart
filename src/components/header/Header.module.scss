@@ -1,14 +1,35 @@
 @import "../../styles/color.scss";
+@import "../../styles/common.scss";
 
 .header {
-  width: 60%;
+  @include mainWidth;
   padding-top: 60px;
   display: flex;
+  align-items: center;
 
   .input {
     border: none;
     border-bottom: 1px solid $mainColor;
     width: 300px;
     height: 30px;
+    outline: none;
+  }
+
+  .search {
+    padding: 5px;
+    border-radius: 5px;
+    height: 20px;
+    object-fit: contain;
+
+    &:hover {
+      cursor: pointer;
+      background-color: lightgray;
+    }
+  }
+
+  @include mobile {
+    .input {
+      width: 200px;
+    }
   }
 }

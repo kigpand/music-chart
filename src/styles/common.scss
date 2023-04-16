@@ -4,7 +4,16 @@
   justify-content: center;
 }
 
+@mixin mainWidth {
+  width: 60%;
+
+  @media (max-width: 767px) {
+    width: 90%;
+  }
+}
+
 @mixin list {
+  width: 60%;
   height: 100%;
 
   .imgContainer {
@@ -30,5 +39,21 @@
   .date {
     width: 20%;
     height: 100%;
+  }
+
+  @media (max-width: 767px) {
+    width: 90%;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 1024px) {
+    @content;
   }
 }
