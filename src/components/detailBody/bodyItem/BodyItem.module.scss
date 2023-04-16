@@ -1,0 +1,35 @@
+@import "../../../styles/color.scss";
+
+.bodyItem {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+  position: relative;
+
+  .title {
+    padding: 10px;
+    background-color: $mainColor;
+    color: white;
+    width: 20%;
+    font-weight: bold;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+
+  .text {
+    padding: 10px 10px;
+    width: 70%;
+    border: 1px solid $mainColor;
+  }
+
+  .url {
+    background-color: red;
+    color: white;
+    padding: 5px;
+    right: 30px;
+    position: absolute;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+}

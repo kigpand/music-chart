@@ -9,6 +9,13 @@ interface IList {
 const List = ({ entry }: IList) => {
   return (
     <div className={styles.list}>
+      <div className={styles.header}>
+        <div className={styles.imgContainer}></div>
+        <div className={styles.title}>곡정보</div>
+        <div className={styles.artist}>아티스트</div>
+        <div className={styles.type}>장르</div>
+        <div className={styles.date}>발매일</div>
+      </div>
       {entry.map((item: IEntry, i: number) => {
         return <Item item={item} key={i} />;
       })}

@@ -1,9 +1,4 @@
-@import "./styles/common.scss";
-
 .App {
   width: 100vw;
   height: 100%;
-  overflow-x: hidden;
-  @include flexSort;
-  flex-direction: column;
 }

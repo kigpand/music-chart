@@ -1,0 +1,37 @@
+@import "../../styles/color.scss";
+
+.detailBody {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  .link {
+    position: absolute;
+    top: 30px;
+    right: 0px;
+    background-color: $mainColor;
+    color: white;
+    padding: 5px;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .img {
+    margin-top: 50px;
+    height: 300px;
+    object-fit: contain;
+    image-rendering: auto;
+  }
+
+  .title {
+    margin: 30px 0 10px 0;
+    font-size: 30px;
+    font-weight: bold;
+    color: $mainColor;
+    padding-bottom: 15px;
+    border-bottom: 1px solid $mainColor;
+  }
+}

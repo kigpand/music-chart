@@ -78,7 +78,7 @@ export interface IEntry {
   title: ITitle;
   link: ILink;
   id: IId;
-  artist: IArtist;
+  "im:artist": IArtist;
   category: ICategory;
-  "im:releaseData": IReleaseData;
+  "im:releaseDate": IReleaseData;
 }

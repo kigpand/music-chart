@@ -1,18 +1,18 @@
 import { useEffect, useState } from "react";
 import styles from "./App.module.scss";
 import { IEntry } from "./interface/IEntry";
-import Header from "./components/header/Header";
-import Sort from "./components/sort/Sort";
-import List from "./components/list/List";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./page/Home/Home";
+import Detail from "./page/Detail/Detail";
 
 function App() {
-  const [chart, setChart] = useState<IEntry[]>([]);
+  const [entry, setEntry] = useState<IEntry[]>([]);
 
   useEffect(() => {
     fetch("https://itunes.apple.com/us/rss/topalbums/limit=100/json")
       .then((res) => res.json())
       .then((response: any) => {
-        setChart(response.feed.entry);
+        setEntry(response.feed.entry);
       })
       .catch((e: any) => {
         alert("error");
@@ -21,9 +21,15 @@ function App() {
 
   return (
     <div className={styles.App}>
-      <Header />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home entry={entry} />}></Route>
+          <Route path="/detail/:id" element={<Detail entry={entry} />}></Route>
+        </Routes>
+      </BrowserRouter>
+      {/* <Header onSearch={onSearch} />
       <Sort />
-      {chart.length > 0 ? <List entry={chart} /> : <div>로딩중</div>}
+      <List entry={search.length > 0 ? search : entry} /> */}
     </div>
   );
 }

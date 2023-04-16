@@ -1,0 +1,52 @@
+@import "../../styles/common.scss";
+
+.item {
+  width: 60%;
+  padding: 15px 0;
+  display: flex;
+  @include list;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  align-items: center;
+
+  &:hover {
+    cursor: pointer;
+    background-color: lightgray;
+  }
+
+  .imgContainer {
+    padding-left: 10px;
+    .img {
+      height: 60px;
+      object-fit: contain;
+    }
+  }
+
+  .title,
+  .artist,
+  .type,
+  .date {
+    padding: 0 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .title {
+    font-weight: bold;
+  }
+
+  .artist,
+  .type,
+  .date {
+    text-align: center;
+  }
+
+  .type,
+  .date {
+    font-size: 14px;
+  }
+
+  .date {
+    color: gray;
+  }
+}

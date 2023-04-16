@@ -1,0 +1,18 @@
+@import "../../styles/common.scss";
+@import "../../styles/color.scss";
+
+.list {
+  width: 100%;
+  @include flexSort;
+  flex-direction: column;
+
+  .header {
+    width: 60%;
+    display: flex;
+    @include list;
+    font-size: 14px;
+    padding: 10px 0;
+    text-align: center;
+    border-bottom: 2px solid $mainColor;
+  }
+}
