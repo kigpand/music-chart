@@ -16,13 +16,13 @@ export interface IItemCount extends ILabel {}
 
 export interface IPrice extends ILabel {
   attributes: {
-    amount: "string";
-    currency: "string";
+    amount: string;
+    currency: string;
   };
 }
 
 export interface IContentAttributes extends ILabel {
-  term: "string";
+  term: string;
 }
 
 export interface IContentType {
